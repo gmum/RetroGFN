@@ -1,0 +1,6 @@
+ReplayBuffer.sampler = %train_backward_sampler
+ReplayBuffer.max_size = 1e6
+ReplayBuffer.temperature = 8.0
+
+train_replay_buffer/gin.singleton.constructor = @ReplayBuffer
+train_replay_buffer = @train_replay_buffer/gin.singleton()

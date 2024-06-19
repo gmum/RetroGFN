@@ -1,0 +1,12 @@
+env_size = 16
+n_dimensions = 2
+max_num_steps = 1
+
+HyperGridEnv.size = %env_size
+HyperGridEnv.n_dimensions = %n_dimensions
+HyperGridEnv.max_num_steps = %max_num_steps
+
+
+env/gin.singleton.constructor = @HyperGridEnv
+train_env = @env/gin.singleton()
+valid_env = %train_env

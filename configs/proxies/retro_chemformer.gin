@@ -1,0 +1,12 @@
+RetroChemformerProxy.checkpoint_path = 'checkpoints/feasibility_proxies/chemformer/train'
+train/RetroChemformerProxy.quantized = True
+valid/RetroChemformerProxy.quantized = False
+
+train/RetroChemformerProxy.data_factory = %train_data_factory
+valid/RetroChemformerProxy.data_factory = %valid_data_factory
+
+train_proxy/gin.singleton.constructor = @train/RetroChemformerProxy
+valid_proxy/gin.singleton.constructor = @valid/RetroChemformerProxy
+train_proxy = @train_proxy/gin.singleton()
+valid_proxy = @valid_proxy/gin.singleton()
+valid_dataset_proxy = %valid_proxy

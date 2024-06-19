@@ -1,0 +1,11 @@
+Reward.reward_boosting = "exponential"
+Reward.min_reward = 1e-8
+Reward.beta = 32
+train/Reward.proxy = %train_proxy
+valid/Reward.proxy = %valid_proxy
+
+
+train_reward/gin.singleton.constructor = @train/Reward
+valid_reward/gin.singleton.constructor = @valid/Reward
+train_reward = @train_reward/gin.singleton()
+valid_reward = @valid_reward/gin.singleton()

@@ -1,0 +1,10 @@
+WandbLogger.mode = 'online'
+WandbLogger.project_name = 'GFlowNets'
+
+WandbLogger.logdir = @logdir/get_str()
+WandbLogger.experiment_name = %run_name
+logdir/get_str.format = '{}/{}'
+logdir/get_str.values = [%run_dir, 'logs']
+
+logger/gin.singleton.constructor = @WandbLogger
+logger = @logger/gin.singleton()

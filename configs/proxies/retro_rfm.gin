@@ -1,0 +1,15 @@
+RetroRFMProxy.checkpoint_path = 'checkpoints/feasibility_proxies/rfm/train/best_reaction.pt'
+RetroRFMProxy.dataset_lambda = 0.0
+RetroRFMProxy.quantized = False
+
+train/RetroRFMProxy.data_factory = %train_data_factory
+valid/RetroRFMProxy.data_factory = %valid_data_factory
+
+train/RetroRFMProxy.cdf_mode = 'gumbel'
+valid/RetroRFMProxy.cdf_mode = 'sigmoid'
+
+train_proxy/gin.singleton.constructor = @train/RetroRFMProxy
+valid_proxy/gin.singleton.constructor = @valid/RetroRFMProxy
+train_proxy = @train_proxy/gin.singleton()
+valid_proxy = @valid_proxy/gin.singleton()
+valid_dataset_proxy = %valid_proxy

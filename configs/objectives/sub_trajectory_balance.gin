@@ -1,0 +1,6 @@
+SubTrajectoryBalanceObjective.forward_policy = %forward_policy
+SubTrajectoryBalanceObjective.backward_policy = %backward_policy
+SubTrajectoryBalanceObjective.lambda_coeff = 1.0
+
+objective/gin.singleton.constructor = @SubTrajectoryBalanceObjective
+objective = @objective/gin.singleton()

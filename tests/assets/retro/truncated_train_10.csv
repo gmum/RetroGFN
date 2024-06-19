@@ -1,0 +1,11 @@
+id;reactants;product;subgraph_idx;product_pattern_idx;reactant_patterns_idx;atom_mapping
+US05849732;COC(=O)[C@H](CCCCNC(=O)OCc1ccccc1)NC(=O)Nc1cc(OC)cc(C(C)(C)C)c1O;COC(=O)[C@H](CCCCN)NC(=O)Nc1cc(OC)cc(C(C)(C)C)c1O;[9];102;[302];[(0, 0, 2)]
+US20120114765A1;Nc1cccc2cnccc12.O=C(O)c1cc([N+](=O)[O-])c(Sc2c(Cl)cncc2Cl)s1;O=C(Nc1cccc2cnccc12)c1cc([N+](=O)[O-])c(Sc2c(Cl)cncc2Cl)s1;[1, 2];41;[275, 460];[(0, 0, 1), (1, 1, 0)]
+US08003648B2;CCNCC.Cc1nc(-c2ccc(C=O)cc2)sc1COc1ccc([C@H](CC(=O)N2C(=O)OC[C@@H]2Cc2ccccc2)c2ccon2)cc1;CCN(CC)Cc1ccc(-c2nc(C)c(COc3ccc([C@H](CC(=O)N4C(=O)OC[C@@H]4Cc4ccccc4)c4ccon4)cc3)s2)cc1;[5, 2];41;[318, 460];[(0, 0, 1), (1, 1, 0)]
+US09045475B2;CC1(C)CCC(CN2CCN(c3ccc(C(=O)NS(=O)(=O)c4ccc(NCC5CNC5)c([N+](=O)[O-])c4)c(Oc4cnc5[nH]ccc5c4)c3)CC2)=C(c2ccc(Cl)cc2)C1.O=C(CF)CF;CC1(C)CCC(CN2CCN(c3ccc(C(=O)NS(=O)(=O)c4ccc(NCC5CN(C(CF)CF)C5)c([N+](=O)[O-])c4)c(Oc4cnc5[nH]ccc5c4)c3)CC2)=C(c2ccc(Cl)cc2)C1;[30, 29];41;[318, 460];[(0, 0, 1), (1, 1, 0)]
+US08188098B2;CCOc1ccc(Oc2ncnc3c2cnn3C2CCNCC2)c(F)c1.O=C(Cl)OC1CCCC1;CCOc1ccc(Oc2ncnc3c2cnn3C2CCN(C(=O)OC3CCCC3)CC2)c(F)c1;[21, 20];41;[200, 460];[(0, 0, 1), (1, 1, 0)]
+US20140275084A1;Cn1cnc(-c2cc(C#N)ccn2)c1Br.OB(O)c1ccc(-n2cccn2)cc1;Cn1cnc(-c2cc(C#N)ccn2)c1-c1ccc(-n2cccn2)cc1;[13, 14];152;[29, 268];[(1, 1, 3), (0, 0, 1)]
+US20110224204A1;CC1(C)OB(c2ccc(OCc3ccc4ccccc4n3)cc2)OC1(C)C.N#Cc1ccc(OC2CCCCO2)c(Br)c1;N#Cc1ccc(OC2CCCCO2)c(-c2ccc(OCc3ccc4ccccc4n3)cc2)c1;[13, 14];152;[29, 128];[(1, 1, 5), (0, 0, 1)]
+US20130005716A1;COc1ccc(C(=O)Cc2c(Cl)c[n+]([O-])cc2Cl)c2c1OC1(CCCC1)O2;COc1ccc(C(O)Cc2c(Cl)c[n+]([O-])cc2Cl)c2c1OC1(CCCC1)O2;[6, 7];51;[452];[(0, 0, 0), (1, 0, 1)]
+US20130172384A1;CC(C)(C)OC(=O)NN.O=C(O)c1ccc(Br)cc1Cl;CC(C)(C)OC(=O)NNC(=O)c1ccc(Br)cc1Cl;[9, 8];41;[275, 460];[(0, 0, 1), (1, 1, 0)]
+US20050277619A1;CCOP(=O)(CO)OCC.Nc1ncnc2c1nc(CBr)n2CCc1ccccc1;CCOP(=O)(COCc1nc2c(N)ncnc2n1CCc1ccccc1)OCC;[7, 6];51;[12, 534];[(0, 0, 1), (1, 1, 0)]

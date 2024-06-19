@@ -1,0 +1,17 @@
+RetroForwardPolicy.hidden_dim = 200
+RetroForwardPolicy.initial_logZ = 0.0
+RetroForwardPolicy.data_factory = %train_data_factory
+
+forward_policy/gin.singleton.constructor = @RetroForwardPolicy
+backward_policy/gin.singleton.constructor = @UniformPolicy
+
+forward_policy = @forward_policy/gin.singleton()
+backward_policy = @backward_policy/gin.singleton()
+
+ExploratoryPolicy.first_policy = %forward_policy
+ExploratoryPolicy.second_policy = @UniformPolicy()
+ExploratoryPolicy.first_policy_weight = 0.99
+
+train_forward_policy/gin.singleton.constructor = @ExploratoryPolicy
+train_forward_policy = @train_forward_policy/gin.singleton()
+train_backward_policy = %backward_policy

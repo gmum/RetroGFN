@@ -1,0 +1,5 @@
+ConditionedTrajectoryBalanceObjective.forward_policy = %forward_policy
+ConditionedTrajectoryBalanceObjective.backward_policy = %backward_policy
+
+objective/gin.singleton.constructor = @ConditionedTrajectoryBalanceObjective
+objective = @objective/gin.singleton()

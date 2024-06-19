@@ -1,0 +1,8 @@
+train/RetroDatasetProxy.data_factory = %train_data_factory
+valid/RetroDatasetProxy.data_factory = %valid_data_factory
+
+train_proxy/gin.singleton.constructor = @train/RetroDatasetProxy
+valid_proxy/gin.singleton.constructor = @valid/RetroDatasetProxy
+train_proxy = @train_proxy/gin.singleton()
+valid_proxy = @valid_proxy/gin.singleton()
+valid_dataset_proxy = %valid_proxy

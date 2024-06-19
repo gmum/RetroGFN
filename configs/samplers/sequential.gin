@@ -1,0 +1,19 @@
+train/RandomSampler.reward = %train_reward
+
+train/forward/RandomSampler.env = %train_env
+train/forward/RandomSampler.policy = %train_forward_policy
+train_forward_sampler/gin.singleton.constructor = @train/forward/RandomSampler
+train_forward_sampler = @train_forward_sampler/gin.singleton()
+
+train/backward/RandomSampler.env = @reverse()
+reverse.env = %train_env
+train/backward/RandomSampler.policy = %train_backward_policy
+train_backward_sampler/gin.singleton.constructor = @train/backward/RandomSampler
+train_backward_sampler = @train_backward_sampler/gin.singleton()
+
+valid/SequentialSampler.env = %valid_env
+valid/SequentialSampler.n_repeats = 100
+valid/SequentialSampler.reward = %valid_reward
+valid/SequentialSampler.policy = %forward_policy
+valid_sampler/gin.singleton.constructor = @valid/SequentialSampler
+valid_sampler = @valid_sampler/gin.singleton()

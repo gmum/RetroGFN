@@ -1,0 +1,51 @@
+import gin_config
+import gflownet
+
+include 'configs/users/piotr.gin'
+include 'configs/loggers/wandb.gin'
+include 'configs/envs/retro.gin'
+include 'configs/policies/retro.gin'
+include 'configs/samplers/sequential.gin'
+include 'configs/proxies/retro_dataset.gin'
+include 'configs/rewards/exponential.gin'
+include 'configs/objectives/conditioned_trajectory_balance.gin'
+include 'configs/replay_buffers/retro.gin'
+
+run_dir = @run_dir/get_str()
+run_dir/get_str.format = '{}/{}'
+run_dir/get_str.values = [%user_root_dir, %run_name]
+
+Reward.beta = 12
+TrajectoryBalanceOptimizer.cls_name = 'Adam'
+TrajectoryBalanceOptimizer.lr = 5e-4
+TrajectoryBalanceOptimizer.logZ_multiplier = 10
+
+ExploratoryPolicy.first_policy_weight = 0.95
+
+n_repeats = 15
+train_metrics = [@StandardGFNMetrics()]
+valid_metrics = [@StandardGFNMetrics(), @RetroTopKAccuracy()]
+RetroTopKAccuracy.k_list = [1, 3, 5, 10]
+RetroTopKAccuracy.n_repeats = %n_repeats
+valid/SequentialSampler.n_repeats = %n_repeats
+
+Trainer.run_dir = %run_dir
+Trainer.train_forward_sampler = %train_forward_sampler
+Trainer.train_backward_sampler = %train_backward_sampler
+Trainer.train_replay_buffer = %train_replay_buffer
+Trainer.train_metrics = %train_metrics
+Trainer.valid_sampler = %valid_sampler
+Trainer.valid_metrics = %valid_metrics
+Trainer.objective = %objective
+Trainer.optimizer = @TrajectoryBalanceOptimizer()
+Trainer.lr_scheduler = None
+Trainer.n_iterations = 30000
+Trainer.train_forward_n_trajectories = 16
+Trainer.train_backward_n_trajectories = 96
+Trainer.train_replay_n_trajectories = 0
+Trainer.valid_n_trajectories = -1
+Trainer.valid_batch_size = 32
+Trainer.valid_every_n_iterations = 1000
+Trainer.logger = %logger
+Trainer.best_metric = 'mrr'
+Trainer.metric_direction = 'max'

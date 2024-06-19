@@ -1,0 +1,8 @@
+HyperGridProxy.size = %env_size
+HyperGridProxy.r_0 = 0.01
+HyperGridProxy.r_1 = 0.5
+HyperGridProxy.r_2 = 2.0
+
+proxy/gin.singleton.constructor = @HyperGridProxy
+train_proxy = @proxy/gin.singleton()
+valid_proxy = %train_proxy

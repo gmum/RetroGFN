@@ -1,0 +1,17 @@
+RetroDataFactory.product_patterns_path = 'data/uspto_50k/processed/product_patterns.csv'
+RetroDataFactory.reactant_patterns_path = 'data/uspto_50k/processed/reactant_patterns.csv'
+
+train/RetroDataFactory.split_path = 'data/uspto_50k/processed/train.csv'
+valid/RetroDataFactory.split_path = 'data/uspto_50k/processed/valid.csv'
+
+train_data_factory/gin.singleton.constructor = @train/RetroDataFactory
+valid_data_factory/gin.singleton.constructor = @valid/RetroDataFactory
+train_data_factory = @train_data_factory/gin.singleton()
+valid_data_factory = @valid_data_factory/gin.singleton()
+
+train/RetroEnv.data_factory = %train_data_factory
+valid/RetroEnv.data_factory = %valid_data_factory
+train_env/gin.singleton.constructor = @train/RetroEnv
+valid_env/gin.singleton.constructor = @valid/RetroEnv
+train_env = @train_env/gin.singleton()
+valid_env = @valid_env/gin.singleton()

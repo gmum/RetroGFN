@@ -1,0 +1,11 @@
+Reward.reward_boosting = "linear"
+Reward.min_reward = 1e-8
+train/Reward.proxy = %train_proxy
+valid/Reward.proxy = %valid_proxy
+train/Reward.beta = 1.0
+valid/Reward.beta = 1.0
+
+train_reward/gin.singleton.constructor = @train/Reward
+valid_reward/gin.singleton.constructor = @valid/Reward
+train_reward = @train_reward/gin.singleton()
+valid_reward = @valid_reward/gin.singleton()

@@ -1,0 +1,10 @@
+ForwardHyperGridPolicy.env = %train_env
+ForwardHyperGridPolicy.hidden_dim = 64
+
+forward_policy/gin.singleton.constructor = @ForwardHyperGridPolicy
+backward_policy/gin.singleton.constructor = @UniformPolicy
+
+forward_policy = @forward_policy/gin.singleton()
+backward_policy = @backward_policy/gin.singleton()
+train_forward_policy = %forward_policy
+train_backward_policy = %backward_policy
