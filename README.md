@@ -94,11 +94,16 @@ products = ['CC(=O)OC1=CC=CC=C1C(=O)O', 'CCCC']
 outputs = model.predict(products, num_results=100) # outputs is a list of lists of SMILES
 ```
 
-[//]: # ()
-[//]: # (### Checkpoints)
-
-[//]: # (Here we provide two checkpoints that were used in the final evaluation in our paper: [RetroGFN with Chemformer Proxy]&#40;&#41; and [RetroGFN with RFM Proxy]&#40;&#41;. The checkpoints should be downloaded into `checkpoints` directory.)
-
-[//]: # ()
-[//]: # ()
-[//]: # (## Cite)
+## Cite
+If you use this code in your research, please cite our paper:
+```
+@misc{retrogfn2024,
+      title={RetroGFN: Diverse and Feasible Retrosynthesis using GFlowNets},
+      author={Piotr Gaiński and Michał Koziarski and Krzysztof Maziarz and Marwin Segler and Jacek Tabor and Marek Śmieja},
+      year={2024},
+      eprint={2406.18739},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2406.18739},
+}
+```
