@@ -34,6 +34,10 @@ conda activate gflownet
 pip install torch==2.3.0 --index-url https://download.pytorch.org/whl/cu118
 pip install dgl==1.1.2 -f https://data.dgl.ai/wheels/torch-2.3/cu118/repo.html
 
+# If using CPU:
+pip install torch==2.3.0 --index-url https://download.pytorch.org/whl/cpu
+pip install dgl==1.1.2 -f https://data.dgl.ai/wheels/torch-2.3/cpu/repo.html
+
 pip install -e .
 
 pip install pre-commit
@@ -45,7 +49,7 @@ To evaluate the RetroGFN using [Syntheseus API](https://github.com/microsoft/syn
 ```sh
 sh external/setup_syntheseus.sh
 ```
-If you want to additionally evaluate the RetroGFN with round-trip accuracy, you need to download the (eval) Chemformer Forward checkpoints from [here](https://ujchmura-my.sharepoint.com/:f:/r/personal/piotr_gainski_doctoral_uj_edu_pl/Documents/feasibility_proxies/chemformer?csf=1&web=1&e=rIjzdH) into `checkpoints` directory.
+If you want to additionally evaluate the RetroGFN with round-trip accuracy, you need to download the (eval) Chemformer Forward checkpoints from [here](https://ujchmura-my.sharepoint.com/:f:/g/personal/piotr_gainski_doctoral_uj_edu_pl/EuN67EdWZ6JCs7bkhV0zJCUBRhH-tO7nNrHNSjBzdJuXVg?e=b3sgcs) into `checkpoints` directory.
 
 ### Setup RFM Proxy
 To train the RetroGFN using Reaction Feasibility Model (RFM) and evaluate it with Feasibility Thresholded Count (FTC) metric, you need to install [our RFM repository](https://github.com/panpiort8/ReactionFeasibilityModel/) with the following command:
